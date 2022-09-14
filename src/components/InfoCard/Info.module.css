@@ -1,0 +1,24 @@
+.InfoSection {
+  background-color: #251f1f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 10px 70px;
+  line-height: 22px;
+}
+.InfoSectionLeft > strong {
+  color: #f4ae1a;
+  font-size: 1.71rem;
+}
+.InfoSectionLeft > span {
+  margin-left: 16px;
+  font-size: 15px;
+  color: #f1f1f1;
+}
+.InfoUpButton {
+  background-color: #f1f1f1;
+  color: #2a6496;
+  border: none;
+  font-size: 13px;
+  padding: 16px 18px;
+}

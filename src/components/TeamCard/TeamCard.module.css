@@ -1,0 +1,30 @@
+.container {
+  padding: 0;
+}
+.TeamCardRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+.TeamCOl {
+}
+.TeamCard {
+  border-style: none;
+}
+.Title {
+  color: #428bca;
+  cursor: pointer;
+  font-size: 16px;
+}
+.Title:hover {
+  color: #2a6496;
+}
+.Text {
+  font-size: 12px;
+}
+.button {
+  font-weight: bold;
+  padding: 12px 5px;
+}

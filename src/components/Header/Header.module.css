@@ -1,0 +1,91 @@
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #251f1f;
+  color: white;
+  font-family: "Roboto Slab", serif;
+  min-height: 90px;
+  padding: 0 30px;
+}
+.headerLogo {
+  padding: 0 50px;
+  margin: 0 auto;
+  gap: 4px;
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+  position: relative;
+}
+.imgLogo {
+  height: 3rem;
+}
+.logoText {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Slab", serif;
+  left: auto;
+  bottom: -5px;
+  margin-left: 10px;
+}
+.headerSearch {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: flex-end;
+}
+.headerSearchItems {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.HeaderSearchIcon {
+  color: black;
+  position: relative;
+  left: -20px;
+  cursor: pointer;
+}
+.headerSearchInput {
+  position: relative;
+  top: -5px;
+  right: -10px;
+  border: 1px solid #ccc;
+  height: 38px;
+  line-height: 38px;
+  width: 280px;
+  padding-left: 14px;
+  float: left;
+}
+ul {
+  margin-top: 20px;
+}
+ul > li > a {
+  bottom: 0;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  padding: 0;
+}
+ul > li > a > span {
+  padding: 0 0 0 10px;
+}
+
+.Info {
+  position: relative;
+  top: -20px;
+  color: #f4ae1a;
+  font-family: "Roboto Slab", serif;
+}
+.InfoNumber {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.InfoEmail {
+  font-size: 12px;
+}

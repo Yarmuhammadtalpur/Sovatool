@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+}
+.Cardcontainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.container h2 {
+  font-size: 31px;
+  color: #454545;
+  line-height: 1.35;
+  text-align: center;
+  letter-spacing: -1.5px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.Card {
+  overflow-x: hidden;
+  border-style: none;
+  padding: 0;
+  margin: 0;
+}
+.CardBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+}
+.CardImg {
+  border: 1px solid #ccc;
+  width: 155px;
+}
+.CardText {
+  padding: 0;
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 11px;
+  font-family: "Finlandica", sans-serif;
+}

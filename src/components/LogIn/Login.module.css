@@ -1,0 +1,18 @@
+.container {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.CardContainer {
+  border: 1px solid #f4ae1a;
+}
+.Title {
+  background-color: #f4ae1a;
+}
+.error {
+  color: rgb(169, 22, 22);
+  font-weight: 500;
+  font-size: 14px;
+}

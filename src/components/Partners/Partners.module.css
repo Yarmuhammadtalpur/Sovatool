@@ -1,0 +1,17 @@
+.Partners {
+  width: 100%;
+  padding: 100px 50px;
+}
+h1 {
+  font-size: 27px;
+  font-weight: 650;
+}
+.Partners > ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.Partners > ul > li > img {
+  height: 80px;
+}
