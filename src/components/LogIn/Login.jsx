@@ -3,29 +3,48 @@ import LoginStyles from "./Login.module.css";
 import { Form, Button, Card, InputGroup } from "react-bootstrap";
 import setAuth from "../../Utils/setAuth";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+import { login } from "../../features/userSlice";
 
 function Login({ error, setError }) {
   const navigate = useNavigate();
+  const [color, setColor] = useState({ color: "" });
   const [userData, setUserData] = useState({
     name: "",
     pass: "",
   });
   const [passType, setPassType] = useState("password");
 
-  const handlesubmit = () => {
-    setAuth(userData);
+  const handlePass = () => {
+    passType === "password"
+      ? setColor({ color: "#f4ae1a" })
+      : setColor({ color: "" });
 
+    passType === "password" ? setPassType("text") : setPassType("password");
+  };
+  const dispatch = useDispatch();
+
+  const handlesubmit = (e) => {
+    e.preventDefault();
+    setAuth();
+
+    dispatch(
+      login({
+        name: userData.name,
+        pass: userData.pass,
+        loggedIn: true,
+      })
+    );
     const data = JSON.parse(localStorage.getItem("isLogged"));
-    !data
-      ? setError({ boolean: false, message: "Wrong Credentials" })
-      : setError({ boolean: null, message: null });
     console.log(data, "login");
     data && navigate("/");
   };
   return (
     <>
       <div className={LoginStyles.container}>
-        <Form>
+        <Form onSubmit={(e) => handlesubmit(e)}>
           <Card className={LoginStyles.CardContainer}>
             <Card.Header className={LoginStyles.Title}>LogIn</Card.Header>
             <Card.Body>
@@ -56,16 +75,21 @@ function Login({ error, setError }) {
                   value={userData.pass}
                   required
                 />
-                <InputGroup.Checkbox
+                {/*  */}
+
+                <InputGroup.Text
                   aria-label="Checkbox for following text input"
-                  onClick={() => {
-                    passType === "password"
-                      ? setPassType("text")
-                      : setPassType("password");
-                  }}
-                />
+                  onClick={handlePass}
+                  style={{ cursor: "pointer" }}
+                >
+                  <FontAwesomeIcon
+                    className={LoginStyles.eye}
+                    style={{ color: color.color }}
+                    icon={faEye}
+                  />
+                </InputGroup.Text>
               </InputGroup>
-              <Button variant="success" onClick={handlesubmit}>
+              <Button variant="success" type="submit">
                 LogIn
               </Button>
             </Card.Body>

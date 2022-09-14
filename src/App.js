@@ -5,7 +5,6 @@ import HomePage from "./components/HomePage";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/LogIn/Login";
 import ProtectedRoutes from "./Utils/ProtectedRoutes";
-import Cookies from "js-cookie";
 function App() {
   const [error, setError] = useState({ boolean: null, message: null });
 
