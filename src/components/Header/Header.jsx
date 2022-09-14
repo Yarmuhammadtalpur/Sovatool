@@ -14,9 +14,12 @@ import {
   faSliders,
   faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+import { logout } from "../../features/userSlice";
 
 function Header() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -46,6 +49,7 @@ function Header() {
                   <span
                     onClick={() => {
                       localStorage.setItem("isLogged", false);
+                      dispatch(logout());
                       navigate("/");
                     }}
                   >

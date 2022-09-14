@@ -5,10 +5,11 @@ import setAuth from "../../Utils/setAuth";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../features/userSlice";
 
 function Login({ error, setError }) {
+  const { user } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const [color, setColor] = useState({ color: "" });
   const [userData, setUserData] = useState({
@@ -28,8 +29,6 @@ function Login({ error, setError }) {
 
   const handlesubmit = (e) => {
     e.preventDefault();
-    setAuth();
-
     dispatch(
       login({
         name: userData.name,
@@ -37,6 +36,7 @@ function Login({ error, setError }) {
         loggedIn: true,
       })
     );
+    setAuth();
     const data = JSON.parse(localStorage.getItem("isLogged"));
     console.log(data, "login");
     data && navigate("/");
