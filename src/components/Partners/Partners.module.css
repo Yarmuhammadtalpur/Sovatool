@@ -9,8 +9,10 @@ h1 {
 .Partners > ul {
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  margin: 0 auto;
   align-items: center;
+  gap: 20px;
 }
 .Partners > ul > li > img {
   height: 80px;
